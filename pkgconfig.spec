@@ -12,7 +12,6 @@ Patch2:		pkg-config-0.19-64bit-fixes.patch
 URL:		http://www.freedesktop.org/software/pkgconfig
 License:	GPL
 Group:		Development/Other
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 pkgconfig is a program which helps you gather information to make
