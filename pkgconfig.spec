@@ -4,14 +4,14 @@ Name:		pkgconfig
 Version:	0.23
 Release:	%mkrel 1
 Summary:	Pkgconfig helps make building packages easier
-Source:		http://www.freedesktop.org/software/pkgconfig/releases/%{pkgname}-%version.tar.gz
+Source:		http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 Patch0:		pkg-config-0.23-biarch.patch
 # (fc) 0.19-1mdk add --print-provides/--print-requires (Fedora)
 Patch1:		pkgconfig-0.15.0-reqprov.patch
 # (gb) 0.19-2mdk 64-bit fixes, though that code is not used, AFAICS
 Patch2:		pkg-config-0.19-64bit-fixes.patch
-URL:		http://www.freedesktop.org/software/pkgconfig
-License:	GPL
+URL:		http://pkg-config.freedesktop.org/
+License:	GPLv2+
 Group:		Development/Other
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
