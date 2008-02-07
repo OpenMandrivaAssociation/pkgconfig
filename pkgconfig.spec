@@ -1,10 +1,11 @@
 %define pkgname pkg-config
+%define glib 1.2.10
 Name:		pkgconfig
-Version:	0.21
+Version:	0.23
 Release:	%mkrel 1
 Summary:	Pkgconfig helps make building packages easier
-Source:		http://www.freedesktop.org/software/pkgconfig/releases/%{pkgname}-%version.tar.bz2
-Patch0:		pkg-config-0.21-biarch.patch
+Source:		http://www.freedesktop.org/software/pkgconfig/releases/%{pkgname}-%version.tar.gz
+Patch0:		pkg-config-0.23-biarch.patch
 # (fc) 0.19-1mdk add --print-provides/--print-requires (Fedora)
 Patch1:		pkgconfig-0.15.0-reqprov.patch
 # (gb) 0.19-2mdk 64-bit fixes, though that code is not used, AFAICS
@@ -25,14 +26,16 @@ In fact, it's required to build certain packages.
 %setup -q -n %{pkgname}-%{version}
 %patch0 -p1 -b .biarch
 %patch1 -p1 -b .reqprov
-%patch2 -p1 -b .64bit-fixes
+cd glib-%glib
+%patch2 -p2 -b .64bit-fixes
+cd ..
 
 #needed by patch1
 autoheader
 autoconf
 
 %build
-%{?__cputoolize: %{__cputoolize} -c glib-1.2.8}
+%{?__cputoolize: %{__cputoolize} -c glib-%glib}
 %configure2_5x 
 %make
 
