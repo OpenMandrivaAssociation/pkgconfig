@@ -2,7 +2,7 @@
 %define glib 1.2.10
 Name:		pkgconfig
 Version:	0.23
-Release:	%mkrel 4
+Release:	%mkrel 5
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 Patch0:		pkg-config-0.23-biarch.patch
