@@ -2,7 +2,7 @@
 %define glib 1.2.10
 Name:		pkgconfig
 Version:	0.23
-Release:	%mkrel 6
+Release:	%mkrel 7
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 Patch0:		pkg-config-0.23-biarch.patch
@@ -10,6 +10,8 @@ Patch0:		pkg-config-0.23-biarch.patch
 Patch1:		pkgconfig-0.15.0-reqprov.patch
 # (gb) 0.19-2mdk 64-bit fixes, though that code is not used, AFAICS
 Patch3:		glib-1.2.10-format_not_a_string_literal_and_no_format_arguments.diff
+# (fc) 0.23-7mdv fix crosscompilation support (Mdv bug #55902) (GIT)
+Patch4:		pkg-config-0.23-crosscompilation.patch
 URL:		http://pkg-config.freedesktop.org/
 # (fhimpe) Otherwise packages with pc files having
 # Requires: pkg-config > X are not installable
@@ -29,6 +31,7 @@ In fact, it's required to build certain packages.
 %setup -q -n %{pkgname}-%{version}
 %patch0 -p1 -b .biarch
 %patch1 -p1 -b .reqprov
+%patch4 -p1 -b .crosscompilation
 
 cd glib-%glib
 %patch3 -p1 -b .format_not_a_string_literal_and_no_format_arguments
