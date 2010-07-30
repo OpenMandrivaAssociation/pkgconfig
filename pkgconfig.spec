@@ -48,6 +48,9 @@ ln -s ../../lib/pkgconfig $RPM_BUILD_ROOT%{_libdir}/pkgconfig/32
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/pkgconfig
 
+%check
+%make check
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
