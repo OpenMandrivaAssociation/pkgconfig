@@ -2,7 +2,7 @@
 
 Name:		pkgconfig
 Version:	0.25
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 Patch0:		pkg-config-0.25-biarch.patch
