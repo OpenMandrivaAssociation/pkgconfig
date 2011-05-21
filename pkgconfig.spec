@@ -1,12 +1,11 @@
 %define pkgname pkg-config
 
 Name:		pkgconfig
-Version:	0.25
-Release:	%mkrel 2
+Version:	0.26
+Release:	%mkrel 1
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
-Patch0:		pkg-config-0.25-biarch.patch
-Patch6:		pkg-config-dnl.patch
+Patch0:		pkg-config-0.26-biarch.patch
 URL:		http://pkg-config.freedesktop.org/
 # (fhimpe) Otherwise packages with pc files having
 # Requires: pkg-config > X are not installable
@@ -27,7 +26,6 @@ In fact, it's required to build certain packages.
 %prep
 %setup -q -n %{pkgname}-%{version}
 %patch0 -p1 -b .biarch
-%patch6 -p1 -b .dnl
 
 %build
 autoreconf -fi
