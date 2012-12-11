@@ -1,8 +1,8 @@
 %define pkgname pkg-config
 
 Name:		pkgconfig
-Version:	0.26
-Release:	%mkrel 2
+Version:	0.27.1
+Release:	1
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 Patch0:		pkg-config-0.26-biarch.patch
@@ -12,7 +12,6 @@ URL:		http://pkg-config.freedesktop.org/
 Provides:	pkgconfig(pkg-config) = %{version}
 License:	GPLv2+
 Group:		Development/Other
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 BuildRequires:	glib2-devel
 BuildRequires:	popt-devel
 
@@ -33,7 +32,6 @@ autoreconf -fi
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 rm -fr %buildroot%_datadir/doc
@@ -48,9 +46,6 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/pkgconfig
 
 %check
 %make check
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
@@ -70,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 * Tue Feb 21 2012 abf
 - The release updated by ABF
 
-* Sat May 21 2011 Götz Waschk <waschk@mandriva.org> 0.26-1mdv2011.0
+* Sat May 21 2011 GÃ¶tz Waschk <waschk@mandriva.org> 0.26-1mdv2011.0
 + Revision: 676613
 - new version
 - drop patch 6
@@ -113,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 + Revision: 224972
 - rebuild
 
-* Thu Feb 07 2008 Götz Waschk <waschk@mandriva.org> 0.23-1mdv2008.1
+* Thu Feb 07 2008 GÃ¶tz Waschk <waschk@mandriva.org> 0.23-1mdv2008.1
 + Revision: 163393
 - new version
 - rediff patch 0
@@ -126,7 +121,7 @@ rm -rf $RPM_BUILD_ROOT
     - kill re-definition of %%buildroot on Pixel's request
 
 
-* Thu Oct 19 2006 G�tz Waschk <waschk@mandriva.org> 0.21-1mdv2007.1
+* Thu Oct 19 2006 Götz Waschk <waschk@mandriva.org> 0.21-1mdv2007.1
 - update and fix patch 0
 - New version 0.21
 
