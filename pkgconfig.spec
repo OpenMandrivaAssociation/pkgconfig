@@ -5,7 +5,6 @@ Version:	0.27.1
 Release:	1
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
-Patch0:		pkg-config-0.26-biarch.patch
 URL:		http://pkg-config.freedesktop.org/
 # (fhimpe) Otherwise packages with pc files having
 # Requires: pkg-config > X are not installable
