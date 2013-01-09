@@ -23,7 +23,6 @@ In fact, it's required to build certain packages.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
-%patch0 -p1 -b .biarch
 
 %build
 autoreconf -fi
