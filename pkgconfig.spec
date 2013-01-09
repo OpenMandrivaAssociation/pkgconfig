@@ -25,7 +25,6 @@ In fact, it's required to build certain packages.
 %setup -q -n %{pkgname}-%{version}
 
 %build
-autoreconf -fi
 %configure2_5x --with-installed-glib --with-installed-popt
 %make
 
