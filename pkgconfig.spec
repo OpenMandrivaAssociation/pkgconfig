@@ -25,29 +25,31 @@ In fact, it's required to build certain packages.
 %setup -q -n %{pkgname}-%{version}
 
 %build
-%configure2_5x --with-installed-glib --with-installed-popt
+%configure2_5x \
+		--with-installed-glib \
+        --with-installed-popt
 %make
 
 %install
 %makeinstall_std
 
-rm -fr %buildroot%_datadir/doc
+rm -fr %{buildroot}%{_datadir}/doc
 
-mkdir -p $RPM_BUILD_ROOT%{_libdir}/pkgconfig
+mkdir -p %{buildroot}%{_libdir}/pkgconfig
 %if "%{_lib}" != "lib"
-mkdir -p $RPM_BUILD_ROOT%{_prefix}/lib/pkgconfig
-ln -s ../../lib/pkgconfig $RPM_BUILD_ROOT%{_libdir}/pkgconfig/32
+mkdir -p %{buildroot}%{_prefix}/lib/pkgconfig
+ln -s ../../lib/pkgconfig %{buildroot}%{_libdir}/pkgconfig/32
 %endif
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/pkgconfig
+mkdir -p %{buildroot}%{_datadir}/pkgconfig
 
 %check
 %make check
 
 %files
-%defattr(-,root,root)
-%doc AUTHORS COPYING INSTALL README ChangeLog pkg-config-guide.html
+%doc AUTHORS INSTALL README ChangeLog pkg-config-guide.html
 %{_bindir}/pkg-config
+%{_bindir}/*-mandriva-linux-gnu-pkg-config
 %dir %{_libdir}/pkgconfig
 %{_datadir}/pkgconfig
 %if "%{_lib}" != "lib"
