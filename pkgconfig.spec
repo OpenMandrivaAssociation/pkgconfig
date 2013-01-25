@@ -1,7 +1,7 @@
 %define pkgname pkg-config
 
 Name:		pkgconfig
-Version:	0.27.1
+Version:	0.28
 Release:	1
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
