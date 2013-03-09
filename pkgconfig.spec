@@ -49,7 +49,7 @@ mkdir -p %{buildroot}%{_datadir}/pkgconfig
 %files
 %doc AUTHORS INSTALL README ChangeLog pkg-config-guide.html
 %{_bindir}/pkg-config
-%{_bindir}/*-mandriva-linux-gnu-pkg-config
+%{_bindir}/*-mandriva-%{_host_os}-pkg-config
 %dir %{_libdir}/pkgconfig
 %{_datadir}/pkgconfig
 %if "%{_lib}" != "lib"
