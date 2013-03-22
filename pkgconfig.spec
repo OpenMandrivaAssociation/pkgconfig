@@ -1,4 +1,5 @@
 %define pkgname pkg-config
+%bcond_with crosscompile
 
 Name:		pkgconfig
 Version:	0.28
@@ -25,10 +26,22 @@ In fact, it's required to build certain packages.
 %setup -q -n %{pkgname}-%{version}
 
 %build
+%if %{with crosscompile}
+export glib_cv_stack_grows=no
+export glib_cv_uscore=yes
+export ac_cv_func_posix_getpwuid_r=yes
+export ac_cv_func_posix_getgrgid_r=yes
 %configure2_5x \
-		--with-installed-glib \
+        --with-internal-glib \
         --with-installed-popt
 %make
+
+%else
+%configure2_5x \
+	--with-installed-glib \
+        --with-installed-popt
+%make
+%endif
 
 %install
 %makeinstall_std
@@ -49,7 +62,7 @@ mkdir -p %{buildroot}%{_datadir}/pkgconfig
 %files
 %doc AUTHORS INSTALL README ChangeLog pkg-config-guide.html
 %{_bindir}/pkg-config
-%{_bindir}/*-mandriva-%{_host_os}-pkg-config
+%{_bindir}/*-mandriva-*-pkg-config
 %dir %{_libdir}/pkgconfig
 %{_datadir}/pkgconfig
 %if "%{_lib}" != "lib"
