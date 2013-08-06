@@ -12,8 +12,8 @@ URL:		http://pkg-config.freedesktop.org/
 Provides:	pkgconfig(pkg-config) = %{version}
 License:	GPLv2+
 Group:		Development/Other
-BuildRequires:	glib2-devel
-BuildRequires:	popt-devel
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(popt)
 
 %description
 pkgconfig is a program which helps you gather information to make
