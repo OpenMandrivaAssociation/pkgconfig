@@ -3,7 +3,7 @@
 
 Name:		pkgconfig
 Version:	0.28
-Release:	2
+Release:	3
 Summary:	Pkgconfig helps make building packages easier
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 URL:		http://pkg-config.freedesktop.org/
