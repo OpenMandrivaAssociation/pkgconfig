@@ -4,7 +4,7 @@
 Summary:	Pkgconfig helps make building packages easier
 Name:		pkgconfig
 Version:	0.28
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Development/Other
 Url:		http://pkg-config.freedesktop.org/
