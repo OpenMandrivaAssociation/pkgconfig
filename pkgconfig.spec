@@ -27,6 +27,8 @@ In fact, it's required to build certain packages.
 %prep
 %setup -qn %{pkgname}-%{version}
 %apply_patches
+# lfs patch touches config.h.in; need this hack to prevent autoreconf and automake
+touch aclocal.m4 config.h.in Makefile.in
 
 %build
 %if %{with crosscompile}
