@@ -10,7 +10,6 @@ Group:		Development/Other
 Url:		http://pkg-config.freedesktop.org/
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 Source1:	pkgconfig.rpmlintrc
-Patch0:		pkg-config-large-fs.patch
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(popt)
 # (fhimpe) Otherwise packages with pc files having
