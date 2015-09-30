@@ -1,3 +1,4 @@
+%define debug_package %{nil}
 %define pkgname pkg-config
 %bcond_with crosscompile
 
