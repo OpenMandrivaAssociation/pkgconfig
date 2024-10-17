@@ -8,7 +8,7 @@ Version:	0.29.1
 Release:	1
 License:	GPLv2+
 Group:		Development/Other
-Url:		http://pkg-config.freedesktop.org/
+Url:		https://pkg-config.freedesktop.org/
 Source0:	http://pkgconfig.freedesktop.org/releases/%{pkgname}-%version.tar.gz
 Source1:	pkgconfig.rpmlintrc
 BuildRequires:	pkgconfig(glib-2.0)
